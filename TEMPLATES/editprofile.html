@@ -1,0 +1,12 @@
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<form method="PUT" >
+	{% load bootstrap %}
+	<div class="container" style="width: 30%;color: solid black">
+		<form method="POST" >{% csrf_token %}
+			{{form |bootstrap}}
+			<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+		</form>
+	</div>
+</form>

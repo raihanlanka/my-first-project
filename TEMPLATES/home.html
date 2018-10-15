@@ -1,0 +1,30 @@
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<form method="post" >
+	{% load bootstrap %}
+	<div class="container" style="width: 30%;color: solid black">
+		<form method="POST" >{% csrf_token %}
+			{{form |bootstrap}}
+			<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+		</form>
+	</div>
+</form>
+
+
+<table style="width:100%" class="table">
+	<tr>
+		<th>Person Name:</th>
+		<th>Edit:</th>
+		<th>REMOVE:</th>
+	</tr>
+	{% for a in alluser %}
+	<tr>						
+		<td><a href="/{{a}}">{{a.firstname}}  {{a.lastname}}</a></td>
+		<td><a href="/Edit/{{a}}"><button>Edit</button></a></td>
+
+		<td><a href="/Remove/{{a}}"><button>Remove</button></a></td>
+
+	</tr>
+	{% endfor %}
+</table>
